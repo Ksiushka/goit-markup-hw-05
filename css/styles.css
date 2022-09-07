@@ -104,8 +104,10 @@ ul {
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
-	display: block;
+	display: flex;
 	text-decoration: none;
+	align-items: center;
+	padding: 32px 0;
 }
 
 .mail-tel a:hover,
@@ -113,13 +115,23 @@ ul {
 	color: var(--accent-color);
 }
 
-.mail-tel svg {
-	fill: var(--second-text-color);
-	width: 12px;
-	display: inline-block;
+.mail-link svg {
+	fill: currentColor;
+	width: 16px;
+	height: 12px;
 	vertical-align: middle;
 	margin-right: 10px;
+	align-items: center;
 }
+
+.tel-link svg {
+	fill: currentColor;
+	width: 10px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 10px;
+	align-items: center;
+	}
 
 .mail-tel a:hover svg,
 .mail-tel a:focus svg {
@@ -208,12 +220,7 @@ ul {
 .section-wedo li:not(:last-child) {
 	margin-right: 30px;
 }
-.portfolio-list li:hover {
-	background-image: linear-gradient(to right,
-			rgba(47, 48, 58, 0.4),
-			rgba(47, 48, 58, 0.4)),
-			url()
-}
+
 
 .portfolio-list {
 	display: flex;
@@ -228,10 +235,15 @@ ul {
 }
 
 .portfolio-list li {
-	margin-right: 30px;
+	margin-right: 29px;
 	margin-bottom: 30px;
 }
 
+.portfolio-list li:hover, 
+.portfolio-list li:focus{
+	border: 1px solid #EEEEEE;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
 .portfolio-title {
 	color: var(--main-text-color);
@@ -320,6 +332,7 @@ ul {
 .filter button:focus {
 	color: var(--hero-text-color);
 	background-color: var(--accent-color);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .visually-hidden {
@@ -448,52 +461,52 @@ footer .logo {
 }
 
 
-.features-img svg {
+.features-img {
 	width: 270px;
 	height: 120px;
 	margin-bottom: 30px;
+	background-color: var(--section-team-background);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.icon:hover .icon-blue {
-	fill: var(--accent-color);
-}
-
-.icon:hover .icon-wight {
-	fill: var(--hero-text-color);
-}
-
-.icon:not(:last-child) {
+.icon-list li:not(:last-child) {
 	margin-right: 10px;
 }
 
-.icon-list {
-	text-align: center;
+ul.icon-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-top: 16px;
-
 }
 
 .icon {
-	width: 44px;
-	height: 44px;
-	fill: #AFB1B8;
-}
-
-.button-icon:hover .icon {
-	fill: var(--hero-text-color);
+	width: 20px;
+	height: 20px;
 }
 
 .button-icon {
-	cursor: pointer;
-	padding: 0;
-	border: none;
 	height: 44px;
 	width: 44px;
 	border-radius: 50%;
-	background-color: var(--hero-text-color);
+	fill: #AFB1B8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-icon:hover,
+.button-icon:focus {
+	background-color: var(--accent-color);
+	fill: var(--hero-text-color);
 }
 
 .clients {
 	display: flex;
+		
 }
 
 .clients li:not(:last-child) {
@@ -501,19 +514,26 @@ footer .logo {
 }
 
 .button-clients {
-	background-color: var(--hero-text-color);
+	color: #AFB1B8;
 	border: 1px solid #AFB1B8;
 	width: 170px;
 	height: 92px;
-	margin-top: 50px;
 	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.customer {
+	margin-bottom: 50px;
 }
 
 .icon-client {
-	fill: #AFB1B8;
+	fill: currentColor;
 }
 
-.button-clients:hover {
+.button-clients:hover,
+.button-clients:focus {
 	border-color: var(--accent-color);
 	cursor: pointer;
 }
@@ -524,34 +544,33 @@ footer .logo {
 
 .footer-flex {
 	display: flex;
-	flex-wrap: nowrap;
+	align-items: baseline;
 }
 
 .footer-address-logo {
-	width: 300px;
-}
-
-.footer-contact-us {
-	
+	width: 231px;
 }
 
 .footer-contact-us .button-icon {
-	background: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+	fill: var(--hero-text-color);
 }
 
-.button-icon:hover {
+.footer-contact-us {
+	margin-left: 70px;
+}
+
+.footer-contact-us .button-icon:hover,
+.footer-contact-us .button-icon:focus {
 	background-color: var(--accent-color);
+	fill: var(--hero-text-color);
 }
 
 .join {
 	margin-bottom: 20px;
-	margin-top: 20px;
 	color: var(--hero-text-color);
-	font-style: normal;
 	font-weight: 700;
-	font-size: 14px;
 	line-height: 1.14px;
-	letter-spacing: 0.03em;
 	text-transform: uppercase;
 }
 
